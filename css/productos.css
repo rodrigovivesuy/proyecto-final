@@ -1,0 +1,144 @@
+h1 {
+  text-align: center;
+  margin: 35px 0;
+  font-size: 64px;
+}
+
+/* Breadcrumb*/
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.breadcrumb a {
+  text-decoration: underline;
+  color: black;
+}
+
+/* Filtros */
+.filtro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filtros {
+  position: relative;
+  width: 200px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.seleccionado {
+  padding: 10px;
+  border-radius: var(--border_radio_sm);
+  background-color: var(--color_gris_claro);
+  text-align: center;
+}
+
+.seleccionado i {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+}
+
+.opciones {
+  display: none;
+  position: absolute;
+  top: 90%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  background: var(--color_gris_claro);
+  border-radius: 0 0 var(--border_radio_sm) var(--border_radio_sm);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.opciones div {
+  padding: 10px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.opciones div:hover {
+  background: var(--color_principal);
+  color: var(--color_texto_claro);
+}
+
+.opciones .activo {
+  background-color: var(--color_celeste);
+  color: var(--color_texto_claro);
+  border-bottom: 1px solid var(--color_texto);
+}
+
+/* Tarjetas */
+.contenedorTarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  color: var(--color_texto);
+  background: var(--color_fondo_claro);
+  border: 0.5px solid var(--color_gris_claro);
+  border-radius: var(--border_radio_sm);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  text-align: left;
+  padding: 12px;
+}
+
+.tarjeta img {
+  width: 100%;
+  min-height: 160px;
+  border-radius: var(--border_radio_sm);
+}
+
+.precio {
+  color: var(--color_principal);
+  font-weight: bold;
+  font-size: 22px;
+  margin: 5px 0;
+}
+
+.tarjeta h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.descripcion {
+  position: relative;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btnAgregarAlCarrito {
+  background-color: var(--color_principal);
+  border: none;
+  margin-top: auto;
+  padding: 8px 12px;
+  color: var(--color_texto_claro);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border-radius: var(--border_radio_sm);
+}
+
+.vendidos {
+  padding-top: 10px;
+  color: var(--color_texto);
+  text-align: right;
+  font-size: 12px;
+}

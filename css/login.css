@@ -1,0 +1,121 @@
+p {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.inputs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs input {
+  width: 420px;
+  height: 60px;
+  padding: 20px 10px 5px 10px;
+  font-size: 18px;
+  border: 1px solid var(--color_gris_claro);
+  box-shadow: 4px 4px 8px #00000044;
+}
+
+.inputs label {
+  position: absolute;
+  top: 48%;
+  left: 10px;
+  transform: translateY(-48%);
+  font-size: 18px;
+  color: gray;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.inputs input:focus ~ label,
+.inputs input:not(:placeholder-shown) ~ label {
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: var(--color_principal);
+}
+
+#mantenerSesion {
+  accent-color: var(--color_principal);
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.main {
+  display: flex;
+  height: 100dvh;
+}
+
+.loginSection {
+  padding: 10px 20px;
+  width: min(660px, 100%);
+  background-image: linear-gradient(
+    to bottom,
+    var(--color_celeste) 0%,
+    var(--color_celeste_2) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}
+
+.loginSection h1 {
+  font-size: 64px;
+  color: var(--color_texto_claro);
+  margin-bottom: 40px;
+}
+
+.loginSection input[type="checkbox"] {
+  transform: scale(2);
+  width: 24px;
+}
+
+input {
+  padding: 10px;
+  border-radius: var(--border_radio);
+}
+
+input:focus-visible {
+  border: 0;
+  outline: 0 !important;
+}
+
+.btnIngresar {
+  border: 0;
+  border-radius: var(--border_radio);
+  background-color: var(--color_principal);
+  height: 60px;
+  width: 265px;
+  color: var(--color_texto_claro);
+  box-shadow: 4px 4px 8px #00000044;
+}
+
+.imageSection {
+  flex-grow: 1;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color_texto_claro) 0%,
+    var(--color_gris_claro) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,8 +1,51 @@
+:root {
+  --color_principal: #f09100;
+  --color_secundario: #212529;
+
+  --color_fondo_degrade: linear-gradient(
+    to bottom,
+    var(--color_texto_claro) 0%,
+    var(--color_gris_claro) 100%
+  );
+
+  /* Colores de texto */
+  --color_texto: #4d4d4d;
+  --color_texto_claro: #f8f9fa;
+  --color_fondo_claro: #f8f9fa;
+
+  /* Colores base */
+  --color_celeste: #5d96cf;
+  --color_celeste_2: #4572ad;
+  --color_celeste_3: #35497d;
+  --color_rosado: #ee4698;
+  --color_rosado_2: #d12d90;
+  --color_amarillo: #eae13d;
+  --color_gris_claro: #e6e7e8;
+
+  /* Bordes */
+  --border_radio: 16px;
+  --border_radio_sm: 8px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: var(--color_fondo_degrade);
+}
+
 .jumbotron,
 .card-body,
 .container,
 .site-header {
-  font-family: 'Verdana', serif !important;
+  font-family: "Verdana", serif !important;
 }
 
 .jumbotron .display-4 {
@@ -32,8 +75,8 @@ nav a {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/cover_back.png');
+  background-color: #53c0fb;
+  background: url("../img/cover_back.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -73,12 +116,12 @@ footer {
 }
 
 footer p {
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .site-header a {
   color: white;
-  transition: ease-in-out color .15s;
+  transition: ease-in-out color 0.15s;
 }
 
 .site-header .dropdown-menu a {
@@ -86,7 +129,7 @@ footer p {
 }
 
 .dropzone {
-  border: 2px dashed #0087F7;
+  border: 2px dashed #0087f7;
   border-radius: 5px;
   background: white;
 }
