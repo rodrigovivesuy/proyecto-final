@@ -8,13 +8,24 @@ const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
 let VerificarSesion = function () {
-  let usuarioLogeado = sessionStorage.getItem("sesion");
-  let mantenerSesion = localStorage.getItem("sesion");
-  if (usuarioLogeado == null && mantenerSesion == null) {
+  let usuarioLogeado = sessionStorage.getItem("usuario");
+  let usuarioGuardado = localStorage.getItem("usuario");
+  if (usuarioLogeado == null && usuarioGuardado == null) {
     window.location = "login.html"
   }
 }
 VerificarSesion();
+
+let AgregarUsuarioHeader = function () {
+  let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"));
+  let usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+  if (usuarioLogeado != null) {
+    document.getElementById("usuario").innerHTML = usuarioLogeado.email;
+  } else if (usuarioGuardado != null) {
+    document.getElementById("usuario").innerHTML = usuarioGuardado.email;
+  }
+}
+AgregarUsuarioHeader();
 
 let showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";

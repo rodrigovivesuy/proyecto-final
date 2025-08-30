@@ -18,9 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (email.length > 0 && pass.length > 0) {
 
             // Guardo el email en sessionStorage y, si se indicó mantener sesión, en localStorage
-            sessionStorage.setItem("sesion", email);
+            let usuario = { email: email };
+            sessionStorage.setItem("usuario", JSON.stringify(usuario));
             if (mantenerSesion) {
-                localStorage.setItem("sesion", email);
+                localStorage.setItem("usuario", JSON.stringify(usuario));
             }
 
             // Redirijo a la página principal
