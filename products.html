@@ -1,99 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/productos.css" rel="stylesheet" />
+  </head>
 
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
-  <link href="css/productos.css" rel="stylesheet" />
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <div class="logoHeader">
-        <img class="d-block d-lg-none" src="img/logo.png">
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <div class="logoHeader">
+          <img class="d-block d-lg-none" src="img/logo.png" />
+        </div>
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item">
+              <p id="usuario"></p>
+            </li>
+          </ul>
+        </div>
       </div>
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-            <p id="usuario"></p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <main class="pb-5 container">
-    <div class="container">
+    </nav>
+    <main class="pb-5 container">
+      <div class="container">
+        <h1>Productos</h1>
 
-      <h1>Productos</h1>
-
-      <!-- breadcrumb -->
-      <div class="d-flex justify-content-between align-items-center">
-        <div id="breadcrumb" class="breadcrumb">
+        <!-- breadcrumb -->
+        <div
+          class="d-flex gap-2 mb-2 justify-content-between align-items-center"
+        >
+          <div id="breadcrumb" class="breadcrumb"></div>
+          <p id="limpiarFiltros">Limpiar filtros</p>
         </div>
 
-        <!-- Filtros -->
-        <div class="filtro">
-          <p class="m-0 d-none d-md-block">Ordenar por:</p>
-          <div class="filtros">
-            <div class="seleccionado">Nombre A-Z <i class="fa fa-chevron-down ms-auto"></i></div>
-            <div class="opciones">
-              <div id="sortAscName" data-value="nombreAscendente" class="activo">Nombre A-Z</div>
-              <div id="sortDscName" data-value="nombreDescendente">Nombre Z-A</div>
-              <div id="sortAscCost" data-value="precioMenor">Precio menor</div>
-              <div id="sortDscCost" data-value="precioMayor">Precio mayor</div>
-              <div id="sortCant" data-value="masVendidos">Más vendidos</div>
+        <!-- Filtro por rango de precio -->
+        <div
+          class="d-flex gap-2 justify-content-between align-items-center contenedorFiltros"
+        >
+          <div class="buscador w-100">
+            <input
+              type="search"
+              name="buscador"
+              id="buscador"
+              placeholder="Buscar producto..."
+            />
+            <button id="buscar"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="d-flex gap-2 justify-content-between align-items-center">
+            <div class="filtro">
+              <div id="precios" class="precios">
+                <div class="seleccionado">
+                  Precio <i class="fa fa-chevron-down ms-auto"></i>
+                </div>
+                <div class="opciones">
+                  <div class="mb-1">
+                    <input
+                      id="rangeFilterCostMin"
+                      type="number"
+                      class="form-control"
+                      placeholder="Min..."
+                    />
+                  </div>
+                  <div class="mb-1">
+                    <input
+                      id="rangeFilterCostMax"
+                      type="number"
+                      class="form-control"
+                      placeholder="Max..."
+                    />
+                  </div>
+                  <div class="btn-filtrar">
+                    <button
+                      id="rangeFilterCost"
+                      type="button"
+                      class="btn-filtrar-precio"
+                    >
+                      Filtrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtro">
+              <p class="m-0 d-none d-md-block text-nowrap">Ordenar por:</p>
+              <div class="filtros" id="filtros">
+                <div class="seleccionado">
+                  Nombre A-Z <i class="fa fa-chevron-down ms-auto"></i>
+                </div>
+                <div class="opciones">
+                  <div
+                    id="sortAscName"
+                    data-value="nombreAscendente"
+                    class="activo"
+                  >
+                    Nombre A-Z
+                  </div>
+                  <div id="sortDscName" data-value="nombreDescendente">
+                    Nombre Z-A
+                  </div>
+                  <div id="sortAscCost" data-value="precioMenor">
+                    Precio menor
+                  </div>
+                  <div id="sortDscCost" data-value="precioMayor">
+                    Precio mayor
+                  </div>
+                  <div id="sortCant" data-value="masVendidos">Más vendidos</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <!-- Tarjetas -->
+        <div id="listaProductos" class="contenedorTarjetas"></div>
       </div>
-
-      <!-- Tarjetas -->
-      <div id="listaProductos" class="contenedorTarjetas">
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>
+          Este sitio forma parte de
+          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+            >Jovenes a Programar</a
+          >
+        </p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>
-        Este sitio forma parte de
-        <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
-      </p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/products.js"></script>
-</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
+  </body>
 </html>

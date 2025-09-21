@@ -19,25 +19,31 @@ h1 {
 }
 
 /* Filtros */
-.filtro {
+.filtro,
+.precio {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
-.filtros {
+.filtros,
+.precios {
   position: relative;
   width: 200px;
-  font-family: sans-serif;
   cursor: pointer;
+}
+
+.precios {
+  width: 150px;
 }
 
 .seleccionado {
   padding: 10px;
   border-radius: var(--border_radio_sm);
-  background-color: var(--color_gris_claro);
+  background-color: var(--color_fondo_claro);
   text-align: center;
+  border: 1px solid var(--color_principal);
 }
 
 .seleccionado i {
@@ -53,10 +59,11 @@ h1 {
   left: 0;
   text-align: center;
   width: 100%;
-  background: var(--color_gris_claro);
+  background: var(--color_fondo_claro);
   border-radius: 0 0 var(--border_radio_sm) var(--border_radio_sm);
   z-index: 10;
   overflow: hidden;
+  border: 1px solid var(--color_principal);
 }
 
 .opciones div {
@@ -67,6 +74,11 @@ h1 {
 .opciones div:hover {
   background: var(--color_principal);
   color: var(--color_texto_claro);
+}
+
+.precios .opciones div:hover {
+  background: var(--color_fondo_claro);
+  color: var(--color_texto);
 }
 
 .opciones .activo {
@@ -94,6 +106,7 @@ h1 {
   overflow: hidden;
   text-align: left;
   padding: 12px;
+  cursor: pointer;
 }
 
 .tarjeta img {
@@ -142,23 +155,174 @@ h1 {
   font-size: 12px;
 }
 
+.buscador {
+  background-color: var(--color_fondo_claro);
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color_principal);
+  border-radius: var(--border_radio_sm);
+  width: 100%;
+}
+
+.buscador input {
+  background-color: var(--color_fondo_claro);
+  border: none;
+  padding: 10px;
+  outline: none;
+  border-radius: var(--border_radio_sm) 0 0 var(--border_radio_sm);
+  width: 100%;
+}
+
+.buscador button {
+  border: none;
+  border-radius: 0 var(--border_radio_sm) var(--border_radio_sm) 0;
+  background-color: var(--color_fondo_claro);
+  border-left: 1px solid var(--color_principal);
+  width: 37px;
+  height: auto;
+  padding: 10px 0;
+}
+
+.buscador button i {
+  color: #4d4d4d80;
+}
+
+#infoProducto {
+  max-width: 1200px;
+  padding: 0 20px 20px 20px;
+  text-align: left !important;
+}
+#infoProducto img {
+  width: 100%;
+  border-radius: var(--border_radio_sm);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+}
+#infoProducto h1 {
+  text-align: left;
+  margin: 0px !important;
+  font-size: 60px;
+}
+#infoProducto h3 {
+  margin-bottom: 0px;
+}
+#infoProducto p {
+  font-size: 16px;
+  margin: 0;
+}
+
+#infoProducto h2 {
+  color: var(--color_principal);
+  font-weight: bold;
+  font-size: 28px;
+  margin: 0;
+  margin-top: auto;
+}
+#infoProducto .btnAgregarAlCarrito {
+  font-size: 18px;
+  width: fit-content;
+}
+
+/* Estilos del desplegable "Precio" */
+
+.btn-filtrar-precio {
+  background-color: var(--color_principal);
+  border: 1px solid var(--color_principal);
+  color: var(--color_fondo_claro);
+  margin-bottom: 5px;
+  padding: 5px 20px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+div:has(.filtro) {
+  width: auto !important;
+}
+
+#limpiarFiltros {
+  color: var(--color_principal);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  #infoProducto h2 {
+    margin: 10px 0;
+    font-size: 32px;
+  }
+  #infoProducto h1 {
+    margin-top: 10px !important;
+    font-size: 50px;
+  }
+  #infoProducto h3 {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+  .contenedorFiltros {
+    flex-direction: column;
+  }
+  .buscador {
+    font-size: 16px;
+  }
+  #limpiarFiltros {
+    font-size: 15px;
+  }
+  div:has(.filtro) {
+    width: 100% !important;
+  }
+}
 @media screen and (max-width: 576px) {
   .breadcrumb,
-  .filtros {
+  .filtros,
+  .precios {
     font-size: 0.9rem;
     gap: 5px;
   }
-  .filtros {
+  .filtros,
+  .precios {
     width: 150px;
+  }
+  #infoProducto h1 {
+    font-size: 40px;
+  }
+  #infoProducto h2 {
+    font-size: 22px;
+  }
+  #infoProducto h3 {
+    font-size: 18px;
+  }
+  .seleccionado i {
+    top: 35%;
+  }
+  .buscador,
+  #limpiarFiltros {
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 390px) {
   .breadcrumb,
-  .filtros {
+  .filtros,
+  .precios {
     font-size: 0.75rem;
   }
-  .filtros {
+  .filtros,
+  .precios {
     width: 130px;
   }
+  .buscador {
+    font-size: 12px;
+  }
+  #limpiarFiltros {
+    font-size: 13px;
+  }
+}
+
+/* Oculta las flechas en navegadores (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
