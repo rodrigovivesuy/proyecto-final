@@ -28,7 +28,7 @@ body {
   padding: 20px 10px 5px 10px;
   font-size: 18px;
   border: 1px solid var(--color_gris_claro);
-  box-shadow: 4px 4px 8px #00000044;
+  box-shadow: var(--tarjeta_sombra);
 }
 
 .inputs label {
@@ -80,7 +80,7 @@ body {
 
 .loginSection h1 {
   font-size: 64px;
-  color: var(--color_texto_claro);
+  color: var(--color_terciario);
   margin-bottom: 40px;
 }
 
@@ -105,15 +105,15 @@ input:focus-visible {
   background-color: var(--color_principal);
   height: 60px;
   width: 265px;
-  color: var(--color_texto_claro);
-  box-shadow: 4px 4px 8px #00000044;
+  color: var(--color_terciario);
+  box-shadow: var(--tarjeta_sombra);
 }
 
 .imageSection {
   flex-grow: 1;
   background-image: linear-gradient(
     to bottom,
-    var(--color_texto_claro) 0%,
+    var(--color_terciario) 0%,
     var(--color_gris_claro) 100%
   );
   display: flex;

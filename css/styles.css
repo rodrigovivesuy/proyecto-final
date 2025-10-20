@@ -1,19 +1,10 @@
 :root {
+  /* Colores que no cambian */
   --color_principal: #f09100;
+  --color_principal_hover: #e28a06;
   --color_secundario: #212529;
-
-  --color_fondo_degrade: linear-gradient(
-    to bottom,
-    var(--color_texto_claro) 0%,
-    var(--color_gris_claro) 100%
-  );
-
-  /* Colores de texto */
-  --color_texto: #4d4d4d;
-  --color_texto_claro: #f8f9fa;
-  --color_fondo_claro: #f8f9fa;
-
-  /* Colores base */
+  --color_terciario: #f8f9fa;
+  
   --color_celeste: #5d96cf;
   --color_celeste_2: #4572ad;
   --color_celeste_3: #35497d;
@@ -25,8 +16,47 @@
   /* Bordes */
   --border_radio: 16px;
   --border_radio_sm: 8px;
+
+  /* Box Shadow */
+  --tarjeta_sombra: 4px 4px 8px rgba(0, 0, 0, 0.25);
+
+  /* -------- Colores en tema light --------- */
+  --color_fondo: #f8f9fa;
+  --color_fondo_2: #f8f9fa;
+  --color_fondo_3: #e6e7e866;
+  --color_fondo_4 : #e6e7e8;
+
+  --color_fondo_degrade: linear-gradient(
+    to bottom,
+    var(--color_texto_3) 0%,
+    var(--color_gris_claro) 100%
+  );
+
+  --color_texto: #4d4d4d;
+  --color_texto_2: #212529;
+  --color_texto_3: #f8f9fa;
+  /* ---------------------------------------- */
+
 }
 
+/* -------- Colores en tema dark --------- */
+[data-theme="dark"] {
+  --color_fondo: black;
+  --color_fondo_2: #212529;
+  --color_fondo_3: black;
+  --color_fondo_4 : #212529;
+
+  --color_fondo_degrade: linear-gradient(
+    to bottom,
+    black 0%,
+    #212529 100%
+  );
+
+  --color_texto: #bfbfbf;
+  --color_texto_2: #f8f9fa;
+  --color_texto_3: #212529;
+}
+ /* -------------------------------------- */
 html {
   box-sizing: border-box;
 }
@@ -39,6 +69,85 @@ html {
 
 body {
   background-image: var(--color_fondo_degrade);
+  color: var(--color_texto);
+}
+
+.cambiarTema{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.checkboxTema{
+  display: none;
+}
+
+.icono {
+  grid-column: 1/1;
+  grid-row: 1/1;
+  transition: transform 500ms;
+}
+
+.iconoLuna{
+  transition-delay:100ms;
+}
+
+.iconoSol{
+  transform: scale(0);
+}
+
+#checkboxTema:checked + .iconoLuna {
+  transform: rotate(360deg) scale(0);
+}
+
+#checkboxTema:checked ~ .iconoSol {
+  transition-delay:100ms;
+  transform: scale(1) rotate(360deg);
+}
+
+.w-8 {
+    width: 2rem /* 32px */;
+  }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  color: var(--color_texto);
+  background: var(--color_fondo);
+  border: 0.5px solid var(--color_gris_claro);
+  border-radius: var(--border_radio_sm);
+  overflow: hidden;
+  text-align: left;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.card:hover{
+  box-shadow: var(--tarjeta_sombra);
+}
+
+.list-group-item {
+  background-color: var(--color_fondo_4);
+  color: var(--color_texto);
+  border: 1px solid var(--color_gris_claro) !important; 
+  border-radius: var(--border_radio_sm) !important;
+}
+.list-group-item h4 {
+  color: var(--color_texto_2);
+}
+.list-group-item:hover{
+  background-color: var(--color_fondo_4);
+  box-shadow: var(--tarjeta_sombra);
+  color: var(--color_texto);
+}
+
+.list-group{
+  gap: 20px;
+  
 }
 
 .jumbotron,
@@ -254,4 +363,26 @@ a.custom-card:hover {
     padding: 0.5rem 0;
     justify-content: center;
   }
+}
+
+/* Menú navegación - Perfil */
+.linkPerfil .dropdown-menu {
+    text-align: center;
+    background-color: var(--color_fondo_2);
+    border-color: var(--color_principal);
+}
+
+.linkPerfil .dropdown-menu a{
+    color: var(--color_texto);
+    padding: 8px;
+    border-bottom: 1px solid var(--color_principal);
+}
+
+.linkpPerfil .dropdown-menu a:last-child{
+    border-bottom: none;
+}
+
+.navbar-nav .dropdown-item:hover{
+    background-color: var(--color_principal);
+    color: var(--color_terciario);
 }

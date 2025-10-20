@@ -11,11 +11,16 @@ h1 {
   justify-content: center;
   gap: 10px;
   margin: 0;
+  color: var(--color_texto_2);
 }
 
 .breadcrumb a {
   text-decoration: underline;
-  color: black;
+  color: var(--color_texto_2);
+}
+
+.breadcrumb i {
+  color: var(--color_texto_2);
 }
 
 /* Filtros */
@@ -41,7 +46,7 @@ h1 {
 .seleccionado {
   padding: 10px;
   border-radius: var(--border_radio_sm);
-  background-color: var(--color_fondo_claro);
+  background-color: var(--color_fondo);
   text-align: center;
   border: 1px solid var(--color_principal);
 }
@@ -59,7 +64,7 @@ h1 {
   left: 0;
   text-align: center;
   width: 100%;
-  background: var(--color_fondo_claro);
+  background: var(--color_fondo);
   border-radius: 0 0 var(--border_radio_sm) var(--border_radio_sm);
   z-index: 10;
   overflow: hidden;
@@ -73,17 +78,22 @@ h1 {
 
 .opciones div:hover {
   background: var(--color_principal);
-  color: var(--color_texto_claro);
+  color: var(--color_texto_3);
 }
 
 .precios .opciones div:hover {
-  background: var(--color_fondo_claro);
+  background: var(--color_fondo);
   color: var(--color_texto);
+}
+
+.precios .opciones div input {
+  background-color: var(--color_fondo_4);
+  color: var(--color_texto_2);
 }
 
 .opciones .activo {
   background-color: var(--color_celeste);
-  color: var(--color_texto_claro);
+  color: var(--color_texto_3);
   border-bottom: 1px solid var(--color_texto);
 }
 
@@ -99,7 +109,7 @@ h1 {
   display: flex;
   flex-direction: column;
   color: var(--color_texto);
-  background: var(--color_fondo_claro);
+  background: var(--color_fondo);
   border: 0.5px solid var(--color_gris_claro);
   border-radius: var(--border_radio_sm);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
@@ -126,7 +136,7 @@ h1 {
 .tarjeta h2 {
   font-size: 18px;
   font-weight: bold;
-  color: black;
+  color: var(--color_texto_2);
 }
 
 .descripcion {
@@ -143,7 +153,8 @@ h1 {
   border: none;
   margin-top: auto;
   padding: 8px 12px;
-  color: var(--color_texto_claro);
+  color: var(--color_terciario);
+  font-weight: 600;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   border-radius: var(--border_radio_sm);
@@ -161,7 +172,7 @@ h1 {
 }
 
 .buscador {
-  background-color: var(--color_fondo_claro);
+  background-color: var(--color_fondo);
   display: flex;
   align-items: center;
   border: 1px solid var(--color_principal);
@@ -170,7 +181,8 @@ h1 {
 }
 
 .buscador input {
-  background-color: var(--color_fondo_claro);
+  background-color: var(--color_fondo);
+  color: var(--color_texto);
   border: none;
   padding: 10px;
   outline: none;
@@ -181,7 +193,7 @@ h1 {
 .buscador button {
   border: none;
   border-radius: 0 var(--border_radio_sm) var(--border_radio_sm) 0;
-  background-color: var(--color_fondo_claro);
+  background-color: var(--color_fondo);
   border-left: 1px solid var(--color_principal);
   width: 37px;
   height: auto;
@@ -197,7 +209,7 @@ h1 {
 .btn-filtrar-precio {
   background-color: var(--color_principal);
   border: 1px solid var(--color_principal);
-  color: var(--color_fondo_claro);
+  color: var(--color_fondo);
   margin-bottom: 5px;
   padding: 5px 20px;
   border-radius: 8px;

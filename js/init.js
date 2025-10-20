@@ -7,25 +7,74 @@ const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
-let VerificarSesion = function () {
-  let usuarioLogeado = sessionStorage.getItem("usuario");
-  let usuarioGuardado = localStorage.getItem("usuario");
-  if (usuarioLogeado == null && usuarioGuardado == null) {
-    window.location = "login.html"
-  }
-}
-VerificarSesion();
+document.addEventListener("DOMContentLoaded", async () =>{
+  let CargarMenuDeNavegacion = function () {
+    const menu = document.getElementById("menuDeNavegacion");
 
-let AgregarUsuarioHeader = function () {
-  let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"));
-  let usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
-  if (usuarioLogeado != null) {
-    document.getElementById("usuario").innerHTML = usuarioLogeado.email;
-  } else if (usuarioGuardado != null) {
-    document.getElementById("usuario").innerHTML = usuarioGuardado.email;
+    fetch("menu-navegacion.html")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Error al cargar el menú: " + response.status);
+      }
+      return response.text();
+    })
+    .then(html => {
+      menu.innerHTML = html;
+    })
+    .catch(error => {
+      console.error("No se pudo cargar el menú de navegación:", error);
+    });
   }
+  await CargarMenuDeNavegacion();
+    
+  let SeleccionarTema = function () {
+    let temaGuardado = JSON.parse(localStorage.getItem("tema"));
+    let tema = temaGuardado === "dark" ? temaGuardado : "light";
+    const documento = document.documentElement;
+    documento.setAttribute("data-theme",tema);
+    const chbox = document.getElementById("checkboxTema");
+    if (chbox) chbox.checked = tema === "dark" ? true : false;
+  }
+  
+  let VerificarSesion = function () {
+    let usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+    let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"));
+    if (usuarioLogeado == null && usuarioGuardado == null || 
+      usuarioLogeado?.conectado == false && usuarioGuardado?.conectado == false) {
+      window.location = "login.html"
+    }
+  }
+  
+  setTimeout(() => {
+    SeleccionarTema();
+    VerificarSesion();
+}, 50);
+});
+
+let CambiarTema = function () {
+  let checkbox = document.getElementById("checkboxTema");
+  let temaSeleccionado = checkbox.checked ? "dark" : "light";
+  localStorage.setItem("tema", JSON.stringify(temaSeleccionado));
+  const documento = document.documentElement;
+  documento.setAttribute("data-theme",temaSeleccionado);
 }
-AgregarUsuarioHeader();
+
+// Cerrar sesión
+document.addEventListener("click", (e) => {
+  if (e.target.id === "logout") {
+    let usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+    let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"));
+    usuarioLogeado.conectado = false
+    usuarioGuardado.conectado = false;
+    localStorage.setItem("usuario", JSON.stringify(usuarioGuardado));
+    sessionStorage.setItem("usuario", JSON.stringify(usuarioLogeado));
+
+    setTimeout(() => {
+      window.location.href = "login.html";
+    },50);
+    return true;
+  }
+});
 
 let showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";

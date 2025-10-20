@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <div class="logoHeader">
+        <img class="d-block d-lg-none" src="img/logo.png">
+      </div>
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item">
+            <div class="d-flex gap-2 align-items-center">
+              <label class="cambiarTema">
+              <input id="checkboxTema" type="checkbox" class="checkboxTema" onclick="CambiarTema()"/>
+              <div class="icono iconoLuna">
+                <img src="img/tema/luna.svg" />
+              </div>
+              <div class="w-8 icono iconoSol">
+                <img src="img/tema/sol.svg" />
+              </div>
+            </label>
+            <div class="linkPerfil position-relative">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Perfil</a>
+            <ul class="dropdown-menu p-0">
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#" id="logout">Cerrar sesión</a></li>
+            </ul>
+            </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

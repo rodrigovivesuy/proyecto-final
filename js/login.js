@@ -14,11 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
         let pass = document.getElementById("password").value.trim();
         let mantenerSesion = document.getElementById("mantenerSesion").checked;
 
+        // Verificar que el usuario existe en el localStorage
+        let usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+        if (usuarioGuardado != null && usuarioGuardado.email === email) {
+            // TODO: Verificar la contraseña
+            
+            // Si el usuario existe, lo conectamos y lo redirecciono al index
+            usuarioGuardado.conectado = true;
+            localStorage.setItem("usuario", JSON.stringify(usuarioGuardado));
+            sessionStorage.setItem("usuario", JSON.stringify(usuarioGuardado));
+            location.href = "index.html";
+            return;
+        }
+
         // Verifico que los campos no estén vacíos
         if (email.length > 0 && pass.length > 0) {
 
             // Guardo el email en sessionStorage y, si se indicó mantener sesión, en localStorage
-            let usuario = { email: email };
+            let usuario = { email: email, conectado: true};
             sessionStorage.setItem("usuario", JSON.stringify(usuario));
             if (mantenerSesion) {
                 localStorage.setItem("usuario", JSON.stringify(usuario));
