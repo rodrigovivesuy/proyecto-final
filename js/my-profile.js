@@ -74,15 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
     CambiarFotoPerfil();
   })
   function CambiarFotoPerfil() {
+    //input archivo invisible
     const fileInput = document.createElement("input");
       fileInput.type = "file";
       fileInput.accept = "image/*";
       fileInput.style.display = "none";
 
+      //usuario selecciona archivo
       fileInput.addEventListener("change", () => {
         const file = fileInput.files && fileInput.files[0];
         if (!file) return;
-
+  
+        // Se lee el archivo cn FileReader y lo convierte a DataURL (base64)
         const reader = new FileReader();
         reader.onload = () => {
           const dataUrl = reader.result;

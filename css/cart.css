@@ -1,0 +1,219 @@
+/* --- Input sin funcionalidad --- */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* --- Mensaje carrito vacío --- */
+#carrito-vacio {
+  display: none;
+  text-align: center;
+  color: var(--color_principal);
+  margin-top: 60px;
+}
+
+#carrito-vacio h3 {
+  color: var(--color_texto);
+  margin-top: 25px;
+}
+
+#carrito-vacio p{
+  color: var(--color_texto);
+  margin-bottom: 20px;
+}
+
+
+/* --- Breadcrumb --- */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--color_texto_2);
+}
+
+.breadcrumb a {
+  text-decoration: underline;
+  color: var(--color_texto_2);
+}
+
+
+/* --- Cada producto --- */
+#carrito-items {
+  background: var(--color_fondo);
+  border: 0.5px solid var(--color_gris_claro);
+  border-radius: var(--border_radio_sm);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  margin-top: 50px;
+}
+
+.carrito-tarjeta {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 0.5px solid var(--color_gris_claro);
+}
+
+.carrito-tarjeta-imagen img {
+  width: 127px;
+  height: 104px;
+  border-radius: var(--border_radio_sm);
+}
+
+.carrito-tarjeta-contenido {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.carrito-tarjeta-contenido h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.precio {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.precio p {
+    text-align: right;
+    margin: 0;
+    cursor: default;
+    font-weight: bold;
+    color: var(--color_principal);
+    font-size: 22px;
+}
+
+@media screen and (max-width: 550px) {
+  .carrito-tarjeta {
+  grid-template-columns: auto 1fr;
+}
+.carrito-tarjeta-contenido {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.precio {
+  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  flex-direction: row;
+}
+
+.precio p {
+    order: -1;
+}
+}
+
+/* --- Cantidad y precio --- */
+.disminuir-aumentar {
+  display: flex;
+  align-items: center;
+}
+
+.disminuir-aumentar button {
+  background: var(--color_fondo);
+  height: 27px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.disminuir-aumentar input {
+  width: 30px;
+  text-align: center;
+  height: 27px;
+  pointer-events: none;
+  background: var(--color_fondo);
+  border-top: 0.5px solid var(--color_gris_claro);
+  border-bottom: 0.5px solid var(--color_gris_claro);
+  border-right: none;
+  border-left: none;
+  color: var(--color_texto);
+}
+
+.aumentar{
+    color: #5D96CF;
+    border: 0.5px solid var(--color_gris_claro);
+    border-left: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 30px;
+}
+
+.disminuir{
+    border: 0.5px solid var(--color_gris_claro);
+    border-right: none;
+    color: var(--color_texto);
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    width: 30px;
+}
+
+/* --- Ícono eliminar --- */
+.eliminar-producto {
+  color: var(--color_texto);
+  cursor: pointer;
+  align-items: right;
+  height: 25px;
+  width: 25px;
+}
+
+.eliminar-producto:hover {
+  color: var(--color_principal_hover);
+}
+
+/* --- Vaciar carrito --- */
+.vaciar-carrito {
+  text-align: right;
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--color_texto);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration: bold;
+}
+
+/* --- Comprar --- */
+.compra-container {
+  background: var(color_fondo);
+  border: 0.5px solid var(--color_gris_claro);
+  border-radius: var(--border_radio_sm);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.suma-precios {
+  font-size: 1.2em;
+  color: #ff8c00;
+  font-weight: bold;
+}
+
+.comprar-btn {
+  width: 100%;
+  background: #ff8c00;
+  color: var(--color_texto_3);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.2s;
+}
+
+.comprar-btn:hover {
+  background: #e57c00;
+}
+

@@ -1,44 +1,90 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <div class="logoHeader">
-        <img class="d-block d-lg-none" src="img/logo.png">
-      </div>
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-            <div class="d-flex gap-2 align-items-center">
-              <label class="cambiarTema">
-              <input id="checkboxTema" type="checkbox" class="checkboxTema" onclick="CambiarTema()"/>
-              <div class="icono iconoLuna">
-                <img src="img/tema/luna.svg" />
-              </div>
-              <div class="w-8 icono iconoSol">
-                <img src="img/tema/sol.svg" />
-              </div>
-            </label>
-            <div class="linkPerfil position-relative">
-              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Perfil</a>
-            <ul class="dropdown-menu p-0">
-              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-              <li><a class="dropdown-item" href="#" id="logout">Cerrar sesión</a></li>
-            </ul>
-            </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+  <div class="container gap-2">
+    <div class="logoHeader">
+      <img class="d-block d-lg-none" src="img/logo.png" />
     </div>
-  </nav>
+    <button
+      class="navbar-toggler ms-auto"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav w-100 justify-content-between align-items-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+        <li class="nav-item">
+          <div class="d-flex gap-2 align-items-center">
+            <div class="linkPerfil position-relative">
+              <a
+                class="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Perfil</a
+              >
+              <ul class="dropdown-menu p-0">
+                <li>
+                  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item d-flex align-items-center justify-content-center gap-2"
+                    href="cart.html"
+                    >Mi carrito
+                    <span
+                      id="badgePerfil"
+                      class="badgePerfil badge badge-secondary bg-danger"
+                      >0</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" id="logout"
+                    >Cerrar sesión</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="carritoMenu">
+      <a class="position-relative" href="cart.html">
+        <i class="fas fa-shopping-cart"></i>
+        <span
+          id="badgeCarrito"
+          class="badge badge-secondary bg-danger position-absolute"
+          >0</span
+        >
+      </a>
+    </div>
+    <label class="cambiarTema">
+      <input
+        id="checkboxTema"
+        type="checkbox"
+        class="checkboxTema"
+        onclick="CambiarTema()"
+      />
+      <div class="icono iconoLuna">
+        <img src="img/tema/luna.svg" />
+      </div>
+      <div class="w-8 icono iconoSol">
+        <img src="img/tema/sol.svg" />
+      </div>
+    </label>
+  </div>
+</nav>

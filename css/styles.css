@@ -59,6 +59,7 @@
  /* -------------------------------------- */
 html {
   box-sizing: border-box;
+  min-height: 100dvh;
 }
 
 *,
@@ -70,16 +71,23 @@ html {
 body {
   background-image: var(--color_fondo_degrade);
   color: var(--color_texto);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
-.cambiarTema{
-  width: 46px;
-  height: 46px;
+.hidden {
+  display: none;
+}
+
+.cambiarTema, .carritoMenu{
   border-radius: 50%;
   display: grid;
   place-items: center;
   cursor: pointer;
   line-height: 1;
+  width: 46px;
+  aspect-ratio: 1/1;
 }
 
 .checkboxTema{
@@ -328,7 +336,7 @@ footer p {
 }
 
 main {
-  min-height: calc(100vh - 210px);
+  flex-grow: 1;
 }
 
 a.custom-card,
@@ -349,6 +357,11 @@ a.custom-card:hover {
   margin: 0;
 }
 
+.carritoMenu .badge {
+  top: -10px;
+  right: -20px;
+}
+
 @media screen and (max-width: 992px) {
   .logoHeader {
     padding: 5px 0;
@@ -363,13 +376,35 @@ a.custom-card:hover {
     padding: 0.5rem 0;
     justify-content: center;
   }
+  .cambiarTema, .carritoMenu{
+    width: 60px;
+    position: fixed;
+    background-color: var(--color_secundario);
+    border: 2px solid var(--color_principal);
+    z-index: 2;
+  }
+  .cambiarTema {
+    bottom: 20px;
+    left: 20px;
+  }
+  .carritoMenu {
+    width: 60px;
+    right: 20px;
+    bottom: 20px;
+    position: fixed;
+  }
+}
+
+.navbar a {
+  color: var(--color_terciario);
 }
 
 /* Menú navegación - Perfil */
 .linkPerfil .dropdown-menu {
-    text-align: center;
-    background-color: var(--color_fondo_2);
-    border-color: var(--color_principal);
+  position: absolute;
+  text-align: center;
+  background-color: var(--color_fondo_2);
+  border-color: var(--color_principal);
 }
 
 .linkPerfil .dropdown-menu a{
@@ -380,6 +415,10 @@ a.custom-card:hover {
 
 .linkpPerfil .dropdown-menu a:last-child{
     border-bottom: none;
+}
+
+.linkPerfil .dropdown-menu[data-bs-popper]{
+  left: -100%;
 }
 
 .navbar-nav .dropdown-item:hover{

@@ -1,105 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/productos.css" />
+    <link rel="stylesheet" href="css/products-info.css" />
+  </head>
 
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/productos.css">
-  <link rel="stylesheet" href="css/products-info.css">
-</head>
+  <body>
+    <div id="menuDeNavegacion"></div>
 
-<body>
-  <div id="menuDeNavegacion">
-  </div>
-
-  <main>
-    <div class="container">
-      <!-- breadcrumb -->
-      <div class="d-flex justify-content-between align-items-center">
-        <div id="breadcrumb" class="breadcrumb my-4">
-          <!-- Breadcrumb -->
-        </div>
-      </div>
-      <div class="row " id="infoProducto">
-        <!-- Info del producto -->
-      </div>
-      <div class="calificaciones">
-        <h3>Deja tu calificación</h3>
-        <div>
-          <div class="col-md-12 col-lg-6 p-0 formularioCalificacion">
-            <div class="puntuacionProducto">
-              <span>Puntúa el producto:</span>
-              <div class="seleccionEstrellas">
-                <i class="far fa-star estrella" data-valor="1"></i>
-                <i class="far fa-star estrella" data-valor="2"></i>
-                <i class="far fa-star estrella" data-valor="3"></i>
-                <i class="far fa-star estrella" data-valor="4"></i>
-                <i class="far fa-star estrella" data-valor="5"></i>
-              </div>
-            </div>
-            <div class="comentarioProducto">
-              <label for="textoComentario">Realiza un comentario:</label>
-              <textarea id="textoComentario" class="inputComentario"
-                placeholder="Escribe un comentario sobre el producto..."></textarea>
-              <button id="btnEnviarComentario" class="btnEnviar">Enviar</button>
-            </div>
+    <main>
+      <div class="container">
+        <!-- breadcrumb -->
+        <div class="d-flex justify-content-between align-items-center">
+          <div id="breadcrumb" class="breadcrumb my-4">
+            <!-- Breadcrumb -->
           </div>
         </div>
-        <h3>Calificaciones y comentarios</h3>
-        <div id="listaComentarios" class="listaComentarios">
-          <div class="comentarioItem">
-            <div class="comentarioEncabezado">
-              <span class="comentarioUsuario">ejemplo@correo.com</span>
-              <div class="comentarioEstrellas">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-              <span class="comentarioFecha">
-                <i class="fas fa-clock"></i> 03/10/2025 12:12
-              </span>
-            </div>
-            <p class="comentarioTexto">Comentario de ejemplo por el usuario</p>
-          </div>
+        <div class="row" id="infoProducto">
+          <!-- Info del producto -->
         </div>
-        <div class="mt-4 ">
+        <div class="calificaciones">
+          <h3>Deja tu calificación</h3>
+          <div>
+            <div class="col-md-12 col-lg-6 p-0 formularioCalificacion">
+              <div class="puntuacionProducto">
+                <span>Puntúa el producto:</span>
+                <div class="seleccionEstrellas">
+                  <i class="far fa-star estrella" data-valor="1"></i>
+                  <i class="far fa-star estrella" data-valor="2"></i>
+                  <i class="far fa-star estrella" data-valor="3"></i>
+                  <i class="far fa-star estrella" data-valor="4"></i>
+                  <i class="far fa-star estrella" data-valor="5"></i>
+                </div>
+              </div>
+              <div class="comentarioProducto">
+                <label for="textoComentario">Realiza un comentario:</label>
+                <textarea
+                  id="textoComentario"
+                  class="inputComentario"
+                  placeholder="Escribe un comentario sobre el producto..."
+                ></textarea>
+                <button id="btnEnviarComentario" class="btnEnviar">
+                  Enviar
+                </button>
+              </div>
+            </div>
+          </div>
+          <h3>Calificaciones y comentarios</h3>
+          <div id="listaComentarios" class="listaComentarios">
+            <div class="comentarioItem">
+              <div class="comentarioEncabezado">
+                <span class="comentarioUsuario">ejemplo@correo.com</span>
+                <div class="comentarioEstrellas">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="comentarioFecha">
+                  <i class="fas fa-clock"></i> 03/10/2025 12:12
+                </span>
+              </div>
+              <p class="comentarioTexto">
+                Comentario de ejemplo por el usuario
+              </p>
+            </div>
+          </div>
+          <div class="mt-4">
             <h3>Productos relacionados</h3>
             <div id="productosRelacionados" class="contenedorTarjetas">
               <!-- Productos relacionados -->
             </div>
+          </div>
         </div>
       </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>
+          Este sitio forma parte de
+          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+            >Jovenes a Programar</a
+          >
+        </p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
-      </p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
-</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/init.js"></script>
+    <script src="js/product-info.js"></script>
+  </body>
 </html>
